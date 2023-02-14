@@ -4,12 +4,12 @@ import numpy as np
 import sys
 import os
 #sys.path.append(os.path.join(os.getcwd(), os.pardir, "openks/models/pytorch/mmd_modules/ThreeDJCG")) # HACK add the lib folder
-from models.base_module.backbone_module import Pointnet2Backbone
-from models.base_module.voting_module import VotingModule
-from models.base_module.lang_module import LangModule
+from .models.base_module.backbone_module import Pointnet2Backbone
+from .models.base_module.voting_module import VotingModule
+from .models.base_module.lang_module import LangModule
 
-from models.proposal_module.proposal_module import ProposalModule
-from models.proposal_module.relation_module import RelationModule
+from .models.proposal_module.proposal_module import ProposalModule
+from .models.proposal_module.relation_module import RelationModule
 from .match_module import MatchModule
 
 

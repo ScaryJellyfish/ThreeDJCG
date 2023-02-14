@@ -5,23 +5,22 @@ import os
 import json
 import pickle
 import argparse
-from lib.config_joint import CONF
+from .lib.config_joint import CONF
 
 import numpy as np
-from lib.config_joint import CONF
-from models.jointnet.jointnet import JointNet
+from .models.jointnet.jointnet import JointNet
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from data.scannet.model_util_scannet import ScannetDatasetConfig
+from .data.scannet.model_util_scannet import ScannetDatasetConfig
 
 # constants
 DC = ScannetDatasetConfig()
 
 
-class ThreeDJCG(nn.Module):
+class MM3DJCG(nn.Module):
     def __init__(self):
         super().__init__()
 
@@ -96,8 +95,8 @@ class ThreeDJCG(nn.Module):
         self.args = parser.parse_args()
 
     @torch.no_grad()
-    def inference(self, data_dict, meta):
-        data_dict = self.model(data_dict)
+    def inference(self, data_dict):
+        data_dict = self.model(data_dict, True)
         return data_dict
 
 def get_model(args, vocabulary, glove, device, root=CONF.PATH.OUTPUT, eval_pretrained=False):
@@ -172,4 +171,4 @@ def get_model(args, vocabulary, glove, device, root=CONF.PATH.OUTPUT, eval_pretr
 
 
 if __name__ == "__main__":
-    ThreeDJCG()
+    MM3DJCG()

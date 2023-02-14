@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import random
 import copy
 
-from models.transformer.attention import MultiHeadAttention
+from .models.transformer.attention import MultiHeadAttention
 from transformers import AutoTokenizer, AutoModel, T5ForConditionalGeneration
 from .modified_t5 import T5Model
 

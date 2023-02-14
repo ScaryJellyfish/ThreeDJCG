@@ -1,2 +1,1 @@
-from .model import ThreeDJCG
-from .app import app
+from .model import MM3DJCG

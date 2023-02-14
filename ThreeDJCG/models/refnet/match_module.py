@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 #sys.path.append(os.path.join(os.getcwd(), os.pardir, "openks/models/pytorch/mmd_modules/ThreeDJCG")) # HACK add the lib folder
-from models.transformer.attention import MultiHeadAttention
-from models.transformer.utils import PositionWiseFeedForward
+from .models.transformer.attention import MultiHeadAttention
+from .models.transformer.utils import PositionWiseFeedForward
 import random
 
 

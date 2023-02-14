@@ -12,7 +12,7 @@ import os
 # sys.path.append(os.path.join(os.getcwd(), "lib")) # HACK add the lib folder
 #sys.path.append(os.path.join(os.getcwd(), os.pardir, "openks/models/pytorch/mmd_modules/ThreeDJCG")) # HACK add the lib folder
 from .loss import SoftmaxRankingLoss
-from utils.box_util import get_3d_box, get_3d_box_batch, box3d_iou, box3d_iou_batch
+from .utils.box_util import get_3d_box, get_3d_box_batch, box3d_iou, box3d_iou_batch
 from .loss_detection import compute_vote_loss, compute_objectness_loss, compute_box_loss, compute_box_and_sem_cls_loss
 
 FAR_THRESHOLD = 0.3

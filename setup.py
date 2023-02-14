@@ -3,16 +3,16 @@ from setuptools import find_packages, setup
 
 import torch
 
-PROJECT_NAME = "3DJCG"
+PROJECT_NAME = "ThreeDJCG"
 PACKAGE_NAME = PROJECT_NAME.replace("-", "_")
 DESCRIPTION = "Joint Captioning and Grounding"
 
 TORCH_VERSION = [int(x) for x in torch.__version__.split(".")[:2]]
-assert TORCH_VERSION >= [1, 13], "Requires PyTorch >= 1.13"
+assert TORCH_VERSION >= [1, 7], "Requires PyTorch >= 1.7"
 
 
 if __name__ == "__main__":
-    version = "0.1.0"
+    version = "0.1.12"
 
     print(f"Building {PROJECT_NAME}-{version}")
 
@@ -21,15 +21,15 @@ if __name__ == "__main__":
         version=version,
         author="Rui Zheng",
         author_email="1156486807@qq.com",
-        url=f"https://github.com/yjzhao19981027/{PROJECT_NAME}",
-        download_url=f"https://github.com/yjzhao19981027/{PROJECT_NAME}/tags",
+        url=f"https://github.com/ScaryJellyfish/{PROJECT_NAME}",
+        download_url=f"https://github.com/ScaryJellyfish/{PROJECT_NAME}/tags",
         description=DESCRIPTION,
         long_description=Path("README.md").read_text(),
         long_description_content_type="text/markdown",
         packages=find_packages(exclude=("tests",)),
-        package_data={PACKAGE_NAME: ["*.dll", "*.so", "*.dylib", "*.txt", "*.txt.gz"]},
+        package_data={PACKAGE_NAME: ["./ThreeDJCG/data/*.json", "./ThreeDJCG/data/*.p", "./ThreeDJCG/data/scannet/*.npz", "./ThreeDJCG/data/scannet/*.txt", "./ThreeDJCG/data/scannet/*.tsv"]},
         zip_safe=False,
-        python_requires=">=3.9",
+        python_requires=">=3.7",
         install_requires=[
             "pillow",
             "aiofiles",
@@ -39,5 +39,7 @@ if __name__ == "__main__":
             "ftfy",
             "regex",
             "tqdm",
+            "h5py",
+            "easydict"
         ],
     )

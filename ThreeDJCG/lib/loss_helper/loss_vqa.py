@@ -9,12 +9,12 @@ import numpy as np
 import sys
 import os
 
-from utils.nn_distance import nn_distance, huber_loss
-from lib.ap_helper_fcos import parse_predictions
+from .utils.nn_distance import nn_distance, huber_loss
+from .lib.ap_helper_fcos import parse_predictions
 # from .loss import SoftmaxRankingLoss, SigmoidRankingLoss
 from .loss import SoftmaxRankingFocalLoss, SigmoidRankingFocalLoss
-from utils.box_util import get_3d_box, get_3d_box_batch, box3d_iou, box3d_iou_batch
-from utils.box_util import rotz_batch_pytorch
+from .utils.box_util import get_3d_box, get_3d_box_batch, box3d_iou, box3d_iou_batch
+from .utils.box_util import rotz_batch_pytorch
 from .loss_detection import compute_vote_loss, compute_objectness_loss, compute_box_loss, compute_box_and_sem_cls_loss
 
 

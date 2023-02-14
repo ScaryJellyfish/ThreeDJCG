@@ -11,12 +11,12 @@ import os
 
 # sys.path.append(os.path.join(os.getcwd(), "lib")) # HACK add the lib folder
 #sys.path.append(os.path.join(os.getcwd(), os.pardir, "openks/models/pytorch/mmd_modules/ThreeDJCG")) # HACK add the lib folder
-from utils.nn_distance import nn_distance, huber_loss
-from lib.ap_helper import parse_predictions
+from .utils.nn_distance import nn_distance, huber_loss
+from .lib.ap_helper import parse_predictions
 from .loss import SoftmaxRankingLoss
-from utils.box_util import get_3d_box, get_3d_box_batch, box3d_iou, box3d_iou_batch
-from lib.config import CONF
-from utils.box_util import rotz_batch_pytorch
+from .utils.box_util import get_3d_box, get_3d_box_batch, box3d_iou, box3d_iou_batch
+from .lib.config import CONF
+from .utils.box_util import rotz_batch_pytorch
 
 FAR_THRESHOLD = 0.3
 NEAR_THRESHOLD = 0.3

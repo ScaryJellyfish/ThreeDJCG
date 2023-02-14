@@ -9,12 +9,12 @@ import sys
 import numpy as np
 import torch
 
-from utils.eval_det import eval_det_cls, eval_det_multiprocessing
-from utils.eval_det import get_iou_obb
-from utils.nms import nms_2d_faster, nms_3d_faster, nms_3d_faster_samecls
-from utils.box_util import get_3d_box
-from data.scannet.model_util_scannet import extract_pc_in_box3d
-from utils.box_util import rotz_batch_pytorch, roty_batch_pytorch
+from .utils.eval_det import eval_det_cls, eval_det_multiprocessing
+from .utils.eval_det import get_iou_obb
+from .utils.nms import nms_2d_faster, nms_3d_faster, nms_3d_faster_samecls
+from .utils.box_util import get_3d_box
+from .data.scannet.model_util_scannet import extract_pc_in_box3d
+from .utils.box_util import rotz_batch_pytorch, roty_batch_pytorch
 
 def flip_axis_to_camera(pc):
     ''' Flip X-right,Y-forward,Z-up to X-right,Y-down,Z-forward

@@ -106,7 +106,7 @@ class ScannetDatasetConfig(object):
             self.type_mean_size[self.class2type[i]] = self.mean_size_arr[i,:]
 
     def _get_nyu40id2class(self):
-        lines = [line.rstrip() for line in open(os.path.join(CONF.PATH.SCANNET, 'meta_data/scannetv2-labels.combined.tsv'))]
+        lines = [line.rstrip() for line in open(os.path.join(CONF.PATH.SCANNET, './meta_data/scannetv2-labels.combined.tsv'))]
         lines = lines[1:]
         nyu40ids2class = {}
         for i in range(len(lines)):

@@ -6,10 +6,10 @@ import torch.nn.functional as F
 import numpy as np
 import random
 #sys.path.append(os.path.join(os.getcwd(), os.pardir, "openks/models/pytorch/mmd_modules/ThreeDJCG")) # HACK add the lib folder
-from data.scannet.model_util_scannet import ScannetDatasetConfig
-from lib.config_captioning import CONF
-from utils.box_util import box3d_iou_batch_tensor
-from models.transformer.attention import MultiHeadAttention
+from .data.scannet.model_util_scannet import ScannetDatasetConfig
+from .lib.config_captioning import CONF
+from .utils.box_util import box3d_iou_batch_tensor
+from .models.transformer.attention import MultiHeadAttention
 
 # constants
 DC = ScannetDatasetConfig()
